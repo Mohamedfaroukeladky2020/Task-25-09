@@ -33,8 +33,12 @@ class ProductController extends Controller
         return redirect()->route('products.index');
     }
 
-    public function loadQuestions($categoryId) {
+    public function loadQuestions($categoryId)
+    {
+        // Retrieve the questions for the selected category
         $questions = Question::where('category_id', $categoryId)->get();
+
+        // Return the questions as a JSON response
         return response()->json($questions);
     }
 
@@ -45,6 +49,7 @@ class ProductController extends Controller
 
         // Return the view with products
         return view('products.index', compact('products'));
+
     }
 
     public function destroy($id)

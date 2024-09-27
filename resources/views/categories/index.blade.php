@@ -11,7 +11,13 @@
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 {{ $category->name }}
                 <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-warning">Edit</a>
+
+                <a href="{{ route('questions.index', ['categoryId' => $category->id]) }}" class="btn btn-info">View Questions</a>
+
+
+
             </li>
+
         @endforeach
     </ul>
 @endsection

@@ -39,13 +39,13 @@ class QuestionController extends Controller
 
     public function index($categoryId)
     {
-        // Find the category by ID
+        // Retrieve the category by ID
         $category = Category::findOrFail($categoryId);
 
-        // Retrieve questions related to the category
-        $questions = $category->questions; // Assuming this relationship is defined
+        // Retrieve the associated questions for this category
+        $questions = $category->questions;
 
-        // Return a view with the list of questions
+        // Return the questions view
         return view('questions.index', compact('category', 'questions'));
     }
 
